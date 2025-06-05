@@ -67,8 +67,9 @@ class Object:
 
 class Player(Object):
     
-    def __init__(self, world, pos, random_internal: bool):
+    def __init__(self, world, pos, random_internal: bool, name: str = "player"):
         super().__init__(world, pos)
+        self.name = name
         self.facing = (0, 1)
         self.inventory = {
             name: info['initial'] for name, info in constants.items.items()}
